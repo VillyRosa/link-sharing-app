@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans/InstrumentSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+
 :root {
     --purple: #633CFF;
     --purple-hover: #BEADFF;
@@ -8,4 +24,8 @@
     --light-grey: #FAFAFA;
     --white: #FFFFFF;
     --red: #FF3939;
+}
+
+* {
+    font-family: 'Instrument Sans', sans-serif;
 }
