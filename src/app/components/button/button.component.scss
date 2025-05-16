@@ -1,0 +1,26 @@
+button {
+  width: 100%;
+  padding: 11px;
+  background-color: var(--purple);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--purple-hover);
+  }
+
+  &:disabled {
+    opacity: 0.25;
+    cursor: default;
+
+    &:hover {
+      background-color: var(--purple);
+    }
+  }
+}

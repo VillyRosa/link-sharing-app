@@ -1,0 +1,52 @@
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin-bottom: 50px;
+  }
+
+  form {
+    padding: 40px;
+    border-radius: 12px;
+    background-color: var(--white);
+
+    h1 {
+      color: var(--dark-grey);
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--grey);
+      margin-bottom: 40px;
+    }
+
+    .inputs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px
+    }
+
+    app-button {
+      margin: 0 24px;
+    }
+
+    .link {
+      width: 100%;
+      text-align: center;
+
+      a {
+        color: var(--purple);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--purple-hover);
+        }
+      }
+    }
+  }
+}
