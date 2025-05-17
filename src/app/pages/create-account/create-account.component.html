@@ -1,1 +1,14 @@
-<p>create-account works!</p>
+<main>
+  <app-svg-inline src="/images/svg/logo-devlinks-large.svg" />
+  <form>
+    <h1>Create account</h1>
+    <p>Let’s get you started sharing your links!</p>
+    <div class="inputs-list">
+      <app-input type="email" label="Email address" name="email" placeholder="e.g. alex@email.com" icon="icon-email" />
+      <app-input type="password" label="Create password" name="password" placeholder="At least 8 characters" icon="icon-password" />
+      <app-input type="password" label="Confirm password" name="confirmPassword" placeholder="At least 8 characters" icon="icon-password" />
+    </div>
+    <app-button type="submit">Create new account</app-button>
+    <p class="link">Already have an account? <a routerLink="/login">Login</a></p>
+  </form>
+</main>

@@ -18,5 +18,10 @@ label {
     border: none;
     outline: none;
     background-color: transparent;
+
+    &::placeholder {
+      color: var(--dark-grey);
+      opacity: 0.5;
+    }
   }
 }
