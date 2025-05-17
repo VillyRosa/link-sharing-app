@@ -11,6 +11,7 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
+      { path: '', redirectTo: '/links', pathMatch: 'full' },
       { path: 'links', component: LinksComponent },
       { path: 'profile-details', component: ProfileDetailsComponent },
       { path: 'preview', component: PreviewComponent }
