@@ -1,0 +1,19 @@
+a {
+  color: var(--grey);
+  text-decoration: none;
+  padding: 11px 27px;
+  border-radius: 8px;
+  font-weight: 600;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    color: var(--purple);
+    background-color: var(--light-purple);
+
+    svg path {
+      fill: currentColor;
+    }
+  }
+}

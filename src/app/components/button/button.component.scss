@@ -23,4 +23,14 @@ button {
       background-color: var(--purple);
     }
   }
+
+  &.outline {
+    background-color: var(--white);
+    border: 1px solid var(--purple);
+    color: var(--purple);
+
+    &:hover {
+      background-color: var(--light-purple);
+    }
+  }
 }

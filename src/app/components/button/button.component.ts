@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() type: 'button' | 'submit' = 'button';
   @Input() disabled: boolean = false;
+  @Input() outline: boolean = false;
 }
