@@ -9,11 +9,11 @@ main {
     display: flex;
     flex-direction: row;
 
-    & > :first-child {
+    app-preview-panel {
       width: 40%;
     }
     
-    & > :last-child {
+    .page {
       width: 100%;
     }
   }
