@@ -1,0 +1,37 @@
+.link-form {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--light-grey);
+  border-radius: 12px;
+
+  header {
+    width: 100%;
+    color: var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      app-svg-inline {
+        cursor: grab;
+      }
+    }
+
+    button {
+      font-size: 14px;
+      color: var(--grey);
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  app-input, app-select {
+    display: block;
+    margin-top: 12px;
+  }
+}

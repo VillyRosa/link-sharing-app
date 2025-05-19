@@ -1,1 +1,26 @@
-<p>links works!</p>
+<section>
+  <div class="container">
+    <h1 class="title">Customize your links</h1>
+    <p>Add/edit/remove links below and then share all your profiles with the world!</p>
+    <app-button type="button" class="add-link" [outline]="true" (click)="addLink()">+ Add new link</app-button>
+    @if (links.length > 0) {
+      <div class="links-list">
+        @for (link of links; track link.id) {
+          <app-link-form [link]="link"></app-link-form>
+        }
+      </div>
+    } @else {
+      <div class="empty-links-container">
+        <img src="./images/svg/illustration-empty.svg" alt="empty-ilustration">
+        <div class="texts">
+          <h1>Let’s get you started</h1>
+          <p>Use the “Add new link” button to get started. Once you have more than one link, you can reorder and edit them. We’re here to help you share your profiles with everyone!</p>
+        </div>
+      </div>
+    }
+  </div>
+  <hr>
+  <div class="align-button">
+    <app-button [disabled]="links.length === 0" type="submit">Save</app-button>
+  </div>
+</section>
