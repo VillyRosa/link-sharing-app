@@ -12,8 +12,8 @@ a {
     color: var(--purple);
     background-color: var(--light-purple);
 
-    svg path {
-      fill: currentColor;
+    ::ng-deep svg path {
+      fill: var(--purple);
     }
   }
 }

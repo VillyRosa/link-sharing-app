@@ -1,3 +1,4 @@
 <a [class.active]="inThisPage" [routerLink]="href">
-  <ng-content />
+  <app-svg-inline [src]="icon" [removeFill]="inThisPage" />
+  <span>{{ label }}</span>
 </a>

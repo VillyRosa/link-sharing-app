@@ -1,10 +1,11 @@
 import { Component, inject, Input, OnInit, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, Event, RouterModule } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
+import { SvgInlineComponent } from "../svg-inline/svg-inline.component";
 
 @Component({
   selector: 'app-nav-link',
-  imports: [RouterModule],
+  imports: [RouterModule, SvgInlineComponent],
   templateUrl: './nav-link.component.html',
   styleUrl: './nav-link.component.scss'
 })
@@ -13,6 +14,8 @@ export class NavLinkComponent implements OnInit, OnDestroy {
   private routerSubscription!: Subscription;
   public inThisPage: boolean = false;
 
+  @Input() label: string = '';
+  @Input() icon: string = '';
   @Input() href: string = '';
 
   public ngOnInit(): void {

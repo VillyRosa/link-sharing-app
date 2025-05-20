@@ -15,16 +15,35 @@ export class SvgInlineComponent implements OnChanges {
   public svgContent: SafeHtml = '';
   
   @Input() src: string = '';
+  @Input() removeFill: boolean = false;
 
   public ngOnChanges(changes: SimpleChanges): void {
-    if (changes['src'] && this.src) {
+    if ((changes['src'] || changes['removeFill']) && this.src) {
       this.loadSvg();
     }
   }
 
-  public loadSvg(): void {
-    this.http.get(this.src, { responseType: 'text' }).subscribe(svg => {
-      this.svgContent = this.sanitizer.bypassSecurityTrustHtml(svg);
+  private loadSvg(): void {
+    this.http.get(this.src, { responseType: 'text' }).subscribe({
+      next: (svg) => {
+        let processedSvg = svg;
+        
+        if (this.removeFill) {
+          processedSvg = this.removeFillAttributes(svg);
+        }
+
+        this.svgContent = this.sanitizer.bypassSecurityTrustHtml(processedSvg);
+      },
+      error: (err) => {
+        console.error('Error loading SVG:', err);
+        this.svgContent = '';
+      }
     });
+  }
+
+  private removeFillAttributes(svg: string): string {
+    return svg.replace(/fill="[^"]*"/g, '')
+             .replace(/fill:[^;"]*(;|")/g, '$1')
+             .replace(/fill=[^ >]*/g, '');
   }
 }
