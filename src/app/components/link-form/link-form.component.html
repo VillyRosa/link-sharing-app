@@ -6,6 +6,11 @@
     </div>
     <button type="button">Remove</button>
   </header>
-  <app-input label="Platform" icon="icon-github" placeholder="GitHub" />
+  <app-select
+    label="Platform"
+    placeholder="e.g. Twitter"
+    [options]="platformsOptions"
+    selectedValue="github"
+  />
   <app-input label="Link" icon="icon-link" placeholder="e.g. https://www.github.com/johnappleseed" />
 </div>
