@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -9,14 +9,20 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './svg-inline.component.html',
   styleUrl: './svg-inline.component.scss'
 })
-export class SvgInlineComponent implements OnInit {
+export class SvgInlineComponent implements OnChanges {
   private http = inject(HttpClient);
   private sanitizer = inject(DomSanitizer);
   public svgContent: SafeHtml = '';
   
   @Input() src: string = '';
 
-  public ngOnInit(): void {
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (changes['src'] && this.src) {
+      this.loadSvg();
+    }
+  }
+
+  public loadSvg(): void {
     this.http.get(this.src, { responseType: 'text' }).subscribe(svg => {
       this.svgContent = this.sanitizer.bypassSecurityTrustHtml(svg);
     });
