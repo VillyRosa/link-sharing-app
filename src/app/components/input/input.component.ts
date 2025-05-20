@@ -13,4 +13,5 @@ export class InputComponent {
   @Input() type: 'text' | 'email' | 'password' = 'text';
   @Input() placeholder: string = '';
   @Input() name: string = '';
+  @Input() secondary: boolean = false;
 }
