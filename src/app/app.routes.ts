@@ -14,9 +14,9 @@ export const routes: Routes = [
       { path: '', redirectTo: '/links', pathMatch: 'full' },
       { path: 'links', component: LinksComponent },
       { path: 'profile-details', component: ProfileDetailsComponent },
-      { path: 'preview', component: PreviewComponent }
     ]
   },
+  { path: 'preview', component: PreviewComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
 ];
