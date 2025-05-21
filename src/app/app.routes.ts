@@ -1,15 +1,17 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { CreateAccountComponent } from './pages/create-account/create-account.component';
-import { LinksComponent } from './pages/links/links.component';
-import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
-import { PreviewComponent } from './pages/preview/preview.component';
-import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { authGuard } from '@guards/auth.guard';
+import { MainLayoutComponent } from '@layouts/main-layout/main-layout.component';
+import { CreateAccountComponent } from '@pages/create-account/create-account.component';
+import { LinksComponent } from '@pages/links/links.component';
+import { LoginComponent } from '@pages/login/login.component';
+import { PreviewComponent } from '@pages/preview/preview.component';
+import { ProfileDetailsComponent } from '@pages/profile-details/profile-details.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: '/links', pathMatch: 'full' },
       { path: 'links', component: LinksComponent },
