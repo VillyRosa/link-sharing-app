@@ -1,0 +1,86 @@
+.input-photo-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  label {
+    width: 44.5%;
+    color: var(--grey);
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .square {
+      width: 193px;
+      height: 193px;
+      background-color: var(--light-purple);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      gap: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      &.selected {
+        app-svg-inline, span {
+          display: none;
+        }
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+  
+        &:hover {
+          &::before {
+            opacity: 1;
+          }
+  
+          app-svg-inline, span {
+            display: flex;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+  
+            ::ng-deep svg path {
+              fill: var(--white);
+            }
+          }
+        }
+      }
+  
+      span {
+        color: var(--purple);
+        font-weight: 600;
+      }
+    }
+  
+    input[type="file"] {
+      display: none;
+    }
+  
+    .required {
+      width: 60%;
+      font-size: 13px;
+      color: var(--grey);
+    }
+  }
+
+}

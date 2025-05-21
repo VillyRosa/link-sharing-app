@@ -1,0 +1,23 @@
+<div class="input-photo-wrapper">
+  <label [for]="name">{{ label }}</label>
+  <div class="container">
+    <label
+      [for]="name"
+      class="square photo-select"
+      [class.selected]="selectedFile"
+      [style.background-image]="'url(' + imagePreview + ')'"
+    >
+      <app-svg-inline src="/images/svg/icon-upload-image.svg" />
+      <span>+ Upload Image</span>
+    </label>
+    <input
+      class="hidden"
+      type="file"
+      [name]="name"
+      [id]="name"
+      accept="image/png, image/jpeg"
+      (change)="onFileSelected($event)"
+    >
+    <span class="required">Image must be below 1024x1024px. Use PNG or JPG format.</span>
+  </div>
+</div>

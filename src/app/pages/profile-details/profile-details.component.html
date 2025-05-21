@@ -1,1 +1,20 @@
-<p>profile-details works!</p>
+<section>
+  <div class="container">
+    <h1 class="title">Profile Details</h1>
+    <p>Add your details to create a personal touch to your profile.</p>
+    <div class="infos-list">
+      <div class="input-list">
+        <app-input-photo label="Profile picture" name="photo" />
+      </div>
+      <div class="input-list">
+        <app-input name="firstName" label="First name*" placeholder="e.g. John" [secondary]="true" />
+        <app-input name="lastName" label="Last name*" placeholder="e.g. Appleseed" [secondary]="true" />
+        <app-input name="email" label="Email" placeholder="e.g. email@example.com" [secondary]="true" />
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="align-button">
+    <app-button [disabled]="true" type="submit">Save</app-button>
+  </div>
+</section>
