@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Link } from '../../models/Link';
-import { SvgInlineComponent } from "../svg-inline/svg-inline.component";
-import { InputComponent } from '../input/input.component';
-import { SelectComponent } from "../select/select.component";
-import { SelectOption } from '../../models/SelectOption';
+import { InputComponent } from '@components/input/input.component';
+import { SelectComponent } from '@components/select/select.component';
+import { SvgInlineComponent } from '@components/svg-inline/svg-inline.component';
+import { Link } from '@models/Link';
+import { SelectOption } from '@models/SelectOption';
 
 @Component({
   selector: 'app-link-form',

@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, HostListener, inject, Input, Output } from '@angular/core';
-import { SelectOption } from '../../models/SelectOption';
-import { SvgInlineComponent } from "../svg-inline/svg-inline.component";
+import { SvgInlineComponent } from '@components/svg-inline/svg-inline.component';
+import { SelectOption } from '@models/SelectOption';
 
 @Component({
   selector: 'app-select',

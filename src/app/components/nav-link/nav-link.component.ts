@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnInit, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, Event, RouterModule } from '@angular/router';
+import { SvgInlineComponent } from '@components/svg-inline/svg-inline.component';
 import { filter, Subscription } from 'rxjs';
-import { SvgInlineComponent } from "../svg-inline/svg-inline.component";
 
 @Component({
   selector: 'app-nav-link',

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SvgInlineComponent } from '../svg-inline/svg-inline.component';
+import { SvgInlineComponent } from '@components/svg-inline/svg-inline.component';
 
 @Component({
   selector: 'app-input',

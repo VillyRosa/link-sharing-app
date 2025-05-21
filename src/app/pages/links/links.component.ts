@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ButtonComponent } from "../../components/button/button.component";
-import { Link } from '../../models/Link';
-import { LinksService } from '../../services/links.service';
-import { LinkFormComponent } from '../../components/link-form/link-form.component';
+import { ButtonComponent } from '@components/button/button.component';
+import { LinkFormComponent } from '@components/link-form/link-form.component';
+import { Link } from '@models/Link';
+import { LinksService } from '@services/links.service';
 
 @Component({
   selector: 'app-links',
