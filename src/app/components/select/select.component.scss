@@ -54,6 +54,9 @@
 
       &.selected, &:hover {
         color: var(--purple);
+        ::ng-deep svg path {
+          fill: var(--purple);
+        }
       }
 
       &:last-child {
